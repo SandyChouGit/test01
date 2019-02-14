@@ -1,6 +1,7 @@
 <?php
   $json_str=file_get_contents('php://input');
-  @json_obj=json_decode($json_str);
+  $json_obj=json_decode($json_str);
 
-  $myfile=fopen("log.txt","w+") or die("Unalbe");
+  $myfile=fopen("log.txt","w+");
+  fwrite($myfile,"\xEF\xBB\xBF".$jason_str);
 ?>
